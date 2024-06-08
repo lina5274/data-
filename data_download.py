@@ -17,9 +17,9 @@ def calculate_and_display_average_price(data):
     print(data)
 
 if __name__ == '__main__':
-    data = {'Date': ['2023-01-01', '2023-01-02', '2023-01-03'], 'Close': [150, 110, 120]}
-    df = pd.DataFrame(data)
-    calculate_and_display_average_price(df)
-
+    ticker = 'GOOGL'
+    stock_data = fetch_stock_data(ticker,)
+    stock_data = add_moving_average(stock_data)
+    calculate_and_display_average_price(stock_data)
 
 
