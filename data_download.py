@@ -16,6 +16,13 @@ def calculate_and_display_average_price(data):
     data = data["Close"].mean()
     print(data)
 
+def export_data_to_csv(data, filename):
+
+with open('output.csv', 'w') as csvfile:
+    csv_writer = csv.writer(csvfile)
+    for row in data:
+        csv_writer.writerow(row)
+
 if __name__ == '__main__':
     ticker = 'GOOGL'
     stock_data = fetch_stock_data(ticker,)
@@ -23,10 +30,4 @@ if __name__ == '__main__':
     calculate_and_display_average_price(stock_data)
 
 
-def export_data_to_csv(data, filename):
-
-with open('output.csv', 'w') as csvfile:
-    csv_writer = csv.writer(csvfile)
-    for row in data:
-        csv_writer.writerow(row)
 
